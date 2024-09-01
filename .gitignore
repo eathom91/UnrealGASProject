@@ -5,6 +5,7 @@ Saved
 Build
 
 .vscode
+.vsconfig
 .vs
 *.VC.db
 *.opensdf
@@ -14,3 +15,4 @@ Build
 *.suo
 *.xcodeproj
 *.xcworkspace
+*.idea
