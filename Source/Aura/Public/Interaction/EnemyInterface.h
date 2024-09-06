@@ -22,4 +22,6 @@ class AURA_API IEnemyInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	virtual void HighlightActor() = 0; // 0 means pure virtual func, class now abstract, deriving class must implement.
+	virtual void UnHighlightActor() = 0;
 };
