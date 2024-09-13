@@ -37,9 +37,19 @@ void AAuraCharacter::OnRep_PlayerState()
 
 void AAuraCharacter::InitAbilityActorInfo()
 {
+	/*
+	 * In the GameMode...
+	 * - the default pawn is set to BP_AuraCharacter
+	 * - the default controller is set BP_AuraPlayerController
+	 * - the default player state is set to BP_AuraPlayerState
+	 *
+	 * Once the pawn has been possessed by the player controller
+	 * the controller has access to the player state and the player state
+	 * is the owner of the avatar actor ie `this`.
+	 */
 	AAuraPlayerState* AuraPlayerState =	GetPlayerState<AAuraPlayerState>();
 	check(AuraPlayerState);
 	AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
 	AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
-	AttributeSet = AuraPlayerState->GetAtrAttributeSet();
+	AttributeSet = AuraPlayerState->GetAttributeSet();
 }
