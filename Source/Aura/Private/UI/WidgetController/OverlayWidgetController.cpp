@@ -3,7 +3,13 @@
 
 #include "UI/WidgetController/OverlayWidgetController.h"
 
+#include "AbilitySystem/AuraAttributeSet.h"
+
 void UOverlayWidgetController::BroadCastInitialValues()
 {
-	// Broadcast values to widgets
+	const UAuraAttributeSet* AuraAttributeSet =	Cast<UAuraAttributeSet>(AttributeSet);
+	
+	OnHealthChanged.Broadcast(AuraAttributeSet->GetHealth());
+	OnMaxHealthChanged.Broadcast(AuraAttributeSet->GetMaxHealth());
+	
 }
